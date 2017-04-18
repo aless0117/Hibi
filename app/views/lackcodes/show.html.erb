@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lackcode.name %>
+</p>
+
+<p>
+  <strong>Lacks:</strong>
+  <%= @lackcode.lack.tipodefalta %>
+</p>
+
+<%= link_to 'Edit', edit_lackcode_path(@lackcode) %> |
+<%= link_to 'Back', lackcodes_path %>

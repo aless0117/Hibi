@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @subjectsto_classroom.day.dia%>
+</p>
+
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @subjectsto_classroom.schedule.start_at.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @subjectsto_classroom.schedule.end_at.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @subjectsto_classroom.user.firstname %>
+</p>
+
+
+<p>
+  <strong>Subject:</strong>
+  <%= @subjectsto_classroom.subject.name %>
+</p>
+
+<p>
+  <strong>Classroom:</strong>
+  <%= @subjectsto_classroom.classroom.name %>
+</p>
+
+<%= link_to 'Edit', edit_subjectsto_classroom_path(@subjectsto_classroom) %> |
+<%= link_to 'Back', subjectsto_classrooms_path %>

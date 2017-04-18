@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body{
+	font-family: 'Montserrat'
+}
+
+li:hover{
+	background-color: white;
+	transition: all 0.5s ease-in-out;
+	color: black;
+}

@@ -1,0 +1,38 @@
+<h1></h1>
+<div class="container padding-box">
+
+  <div class="container">
+    <div class="box-header">
+     <h3 style="color:white;">Salones</h3>
+     <p style="color:white;">Colegio Los Arcos</p>
+    </div>
+  </div>
+<div class="container center1">
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Año</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classrooms.each do |classroom| %>
+      <tr>
+        <td><%= link_to classroom.name , classroom %></td>
+
+        <td><a data-method="get" href="classrooms/<%=classroom.id%>/report/<%=classroom.id%>.pdf"><i class="material-icons">assignment</i></a></td>
+
+
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>
+
+</div>

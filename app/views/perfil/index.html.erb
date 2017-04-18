@@ -1,0 +1,20 @@
+
+<div class="widget" style="height:auto; padding-bottom:10px;">
+	  <div class="cover">
+	    <%= image_tag("background1.png", :alt => "rss feed") %>
+	  </div>
+	<%= image_tag current_user.avatar.url, :class =>"photo" %>
+	  <h1><%= current_user.firstname %> <%= current_user.lastname %></h1>
+
+		<p style="text-align:center"> Soy Ingeniero en informatica apasionado por las matematicas! </p>
+
+			<h2><%= current_user.birthdate %></h2>
+
+
+
+	  <h3>Caracas, Venezuela</h3>
+
+		<%= link_to edit_user_registration_path do %>
+			<i class="material-icons" style="margin-left: 85%;">create</i>
+		<% end %>
+</div>

@@ -1,0 +1,40 @@
+
+<div class="container padding-box">
+
+<div class="container">
+  <div class="box-header">
+   <h3 style="color:white;"><%= @classroom.name %></h3>
+   <p style="color:white;">Colegio Los Arcos</p>
+  </div>
+</div>
+<div class="container center1">
+<h3><%= pluralize(@classroom.students.count, 'Estudiantes')%></h3>
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @classroom.students.each do |p| %>
+      <tr>
+
+        <td><%= link_to p.nombre, student_path(p) %></td>
+
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+
+</div>
+
+
+<%= link_to classrooms_path do %>
+<div class="boton_new">
+  <i class="material-icons circle">arrow_back</i>
+
+</div>
+<% end %>

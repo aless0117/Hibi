@@ -1,0 +1,54 @@
+
+<div class="container padding-box">
+
+<div class="container">
+  <div class="box-header">
+   <h3 style="color:white;">Horario y clases</h3>
+   <p style="color:white;">Horario Itat</p>
+  </div>
+</div>
+<div class="container center1">
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Dia</th>
+      <th>Empieza</th>
+      <th>Termina</th>
+      <th>Profesor</th>
+      <th>Materia</th>
+      <th>Salon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @subjectsto_classrooms.each do |subjectsto_classroom| %>
+      <tr>
+        <td><%= subjectsto_classroom.day.dia %></td>
+        <td><%= subjectsto_classroom.schedule.start_at.strftime("%H:%M") %></td>
+        <td><%= subjectsto_classroom.schedule.end_at.strftime("%H:%M") %></td>
+        <td><%= subjectsto_classroom.user.firstname %></td>
+        <td><%= subjectsto_classroom.subject.name %></td>
+        <td><%= subjectsto_classroom.classroom.name %></td>
+
+        <td><%= link_to edit_subjectsto_classroom_path(subjectsto_classroom) do %>
+          <i class="material-icons">create</i>
+        <% end %></td>
+        <td><%= link_to subjectsto_classroom, method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="material-icons">delete</i>
+        <% end%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>
+
+</div>
+
+
+<div class="boton_new">
+  <a href= "subjectsto_classrooms/new" ><i class="material-icons circle">add_circle</i></a>
+</div>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%= wicked_pdf_stylesheet_link_tag 'pdf'%>
+  </head>
+  <body>
+
+
+
+          <%= wicked_pdf_image_tag @student.avatar.url ,:class =>"photo"%>
+
+
+
+
+
+
+      <div class="container cabecera">
+        <h1>Datos del alumno</h1>
+      </div>
+
+
+      <div class="container datos">
+        <p><strong>Nombre:</strong> <%= @student.nombre %> <%= @student.apellido %></p>
+        <p><strong>Salon:</strong> <%= @student.classroom.name %></p>
+        <p><strong>Representante:</strong> <%=@student.representante1%> </p>
+        <p><strong>Nro. del representante:</strong> <%=@student.phone1%></p>
+        <p><strong>Email:</strong> <%=@student.email1%></p>
+      </div>
+
+      <div class="container cabecera">
+        <h1>Ausencias</h1>
+      </div>
+      <div class="container ausencias">
+        <%@count = @absents.count%>
+        <p><strong>Nro. de ausencias:</strong> <%=@count%></p>
+      </div>
+
+      <div class="container cabecera">
+        <h1>Notificaciones</h1>
+      </div>
+      <div class="container notificaciones">
+        <% @student.notifications.each do |p| %>
+          <h5><b><%= p.lackcode.name%></b></h5>
+              <%= p.description%><br>
+              <%= p.created_at.strftime("%A %H:%M")%>
+            <hr>
+        <% end %>
+      </div>
+
+
+      <%= wicked_pdf_image_tag ('logo1@4x.png') %>
+
+
+
+  </body>
+</html>

@@ -1,0 +1,132 @@
+
+.center-box{
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  margin-top: 10px;
+  height: auto;
+  padding-bottom: 10px;
+
+}
+.padding-box{
+  padding-top: 30px;
+}
+.box-header{
+  background-color: #039BE5;
+  margin-top: -20px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-top: 1px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.column{
+  padding-top: 20px
+}
+
+/*css bootstrap*/
+
+$grid-gutter-width: 1.5rem;
+$grid-columns: 12;
+
+
+*{
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+}
+body {
+  font-size: 1rem;
+
+}
+.content-main,
+.content-secondary {
+  background: white;
+  text-align: center;
+  margin-top: 20px
+}
+
+
+
+// Grid system
+//
+// Generate semantic grid columns with these mixins.
+
+// Centered container element
+@mixin make-container($gutter: $grid-gutter-width)
+{
+  margin-right: auto;
+  margin-left: auto;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width)
+{
+  margin-left:  ($gutter / -2);
+  margin-right: ($gutter / -2);
+}
+
+@mixin make-col($gutter: $grid-gutter-width)
+{
+  position: relative;
+  float: left;
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+}
+
+@mixin make-col-span($columns)
+{
+  width: percentage(($columns / $grid-columns));
+}
+@mixin make-col-offset($columns)
+{
+  margin-left: percentage(($columns / $grid-columns));
+}
+@mixin make-col-push($columns)
+{
+  left: percentage(($columns / $grid-columns));
+}
+@mixin make-col-pull($columns)
+{
+  right: percentage(($columns / $grid-columns));
+}
+
+
+.container {
+  @include make-container();
+}
+
+.row {
+  @include make-row();
+}
+
+.content-main {
+  @include make-col();
+
+  @media (max-width: 32em) {
+    @include make-col-span(6);
+  }
+
+  @media (min-width: 32.1em) {
+    @include make-col-span(8);
+  }
+}
+
+.content-secondary {
+  @include make-col();
+
+  @media (max-width: 32em) {
+    @include make-col-span(6);
+  }
+
+  @media (min-width: 32.1em) {
+    @include make-col-span(4);
+  }
+}

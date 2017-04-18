@@ -1,0 +1,34 @@
+<div class="container padding-box">
+
+
+<div class="container">
+	<div class="box-header">
+
+	  <h3 style="color:white;"><%=@nomina.classroom.name %></h3>
+	    <p style="color:white;">Horario Itat</p>
+	</div>
+
+
+	<div class="container center1">
+	<table class="table table-striped table-hover ">
+	  <thead>
+	    <tr>
+	      <th>nombre</th>
+
+	    </tr>
+	  </thead>
+
+	  <tbody>
+
+	    <% @nomina.classroom.students.each do |p| %>
+	      <tr>
+	        <td><%= link_to p.nombre, student_path(p) %></td>
+	        <td><label for="Inasistente" class="checkbox"><%= link_to 'Inasistente', new_subjectsto_classroom_student_absent_path(@nomina.id, p.id) %></label></td>
+					<td><label for="Inasistente" class="checkbox"><%= link_to 'retraso', new_subjectsto_classroom_student_delay_path(@nomina.id, p.id) %></label></td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+	<br>
+	</div>

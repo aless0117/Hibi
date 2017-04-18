@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>reporte diario</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+  <body>
+
+      <h1>Reporte Diario</h1>
+      <h3><%= @nomina.name %></h3>
+      <h5>Colegio Los Arcos</h5>
+
+    <table class="table table-bordered">
+        <tr>
+          <th><%=Time.now.strftime("%B %d")%></th>
+          <th>Materia</th>
+          <th>Ausencias</th>
+          <th>Profesor</th>
+        </tr>
+      <% @subjectsto_classrooms.each do |subjectsto_classroom| %>
+        <% if Time.now.strftime("%A")	== subjectsto_classroom.day.dia%>
+          <% if subjectsto_classroom.classroom.id == @nomina.id%>
+        <tr>
+          <td><%= subjectsto_classroom.schedule.start_at.strftime("%H:%M") %>-<%= subjectsto_classroom.schedule.end_at.strftime("%H:%M") %></td>
+          <td><%= subjectsto_classroom.subject.name %></td>
+          <td>
+        <% @absents.each do |p| %>
+            <% if subjectsto_classroom.id == p.subjectsto_classroom.id%>
+                <%= p.student.name %>
+              <% end %>
+            <% end %>
+          </td>
+          <td><%= subjectsto_classroom.user.firstname %></td>
+        </tr>
+          <%end%>
+        <%end%>
+      <%end%>
+    </table>
+
+
+
+  </body>
+</html>

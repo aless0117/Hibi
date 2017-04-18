@@ -1,0 +1,15 @@
+<%= form_for([@student,@notification], remote: true, html: { id: "comments-form",format: :json, :"data-type"=>"json" }) do |f| %>
+    <div class="field ">
+      Falta <br>
+      <%= collection_select(:notification,:lackcode_id, Lackcode.all ,:id,:name,{:prompt => 'Elige una materia'}, {class: "btn btn-raised dropdown-toggle"}) %>
+    </div>
+
+    <div >
+      Descripcion <br>
+      <%= f.text_area :description %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit class:"btn btn-raised btn-success" %>
+    </div>
+<% end %>

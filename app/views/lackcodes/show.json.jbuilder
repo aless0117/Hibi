@@ -1,0 +1,1 @@
+json.partial! "lackcodes/lackcode", lackcode: @lackcode

@@ -1,0 +1,29 @@
+
+<div class="container center">
+
+<%= form_for(subjectsto_classroom) do |f| %>
+
+      <h6>Dia</h6>
+      <%= collection_select(:subjectsto_classroom,:day_id,@days,:id,:dia, {prompt: "Select a category"}, {class: "btn btn-raised dropdown-toggle"}) %>
+
+
+      <h6>Hora</h6>
+      <%= collection_select(:subjectsto_classroom,:schedule_id,@schedules,:id,:start_at,{:prompt => 'Elige una materia'}, {class: "btn btn-raised dropdown-toggle"}) %>
+
+
+      <h6>Profesor</h6>
+      <%= collection_select(:subjectsto_classroom,:user_id,@users,:id,:firstname,{:prompt => 'Elige un profesor'}, {class: "btn btn-raised dropdown-toggle"}) %>
+
+
+      <h6>Materia</h6>
+    <%= collection_select(:subjectsto_classroom,:subject_id,@subjects,:id,:name,{:prompt => 'Elige una materia'}, {class: "btn btn-raised dropdown-toggle"}) %>
+
+      <h6>Salon</h6>
+      <%= collection_select(:subjectsto_classroom,:classroom_id,@classrooms,:id,:name,{:prompt => 'Elige una materia'}, {class: "btn btn-raised dropdown-toggle"}) %>
+
+    <div class="actions">
+      <%= f.submit class:"btn btn-raised btn-success" %>
+    </div>
+
+  <% end %>
+</div>

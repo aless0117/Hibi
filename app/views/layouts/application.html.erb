@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hibi</title>
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+
+
+<body>
+  <% if user_signed_in? %>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">Hibi</a>
+      </div>
+      <div class="navbar-collapse collapse navbar-inverse-collapse">
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'inicio', root_path, method: :get  %></li>
+          <li><%= link_to 'Perfil', "perfil/index", method: :get  %></li>
+          <li><%= link_to 'Salones', "classrooms", method: :get  %></li>
+          <li><%= link_to 'Alumnos', "students", method: :get  %></li>
+
+        <% if can? :create, Student %>
+          <li><%= link_to 'Horarios y clases', "subjectsto_classrooms", method: :get  %></li>
+          <!--<li><%= link_to 'Reportes', "report", method: :get  %></li>-->
+        <% end %>
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<%else%>
+
+<%end%>
+
+<%= yield %>
+
+</body>
+
+
+
+</html>

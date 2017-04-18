@@ -1,0 +1,27 @@
+
+    <% @delays.each do |p| %>
+        <tr>
+          <td><%= p.created_at.strftime("%A %H:%M")%></td>
+          <td><%= p.student.nombre %></td>
+        </tr>
+    <% end %>
+
+
+    <div class="widget" style="height:auto; padding-bottom:10px;">
+    	  <div class="cover">
+    	    <%= image_tag("background1.png", :alt => "rss feed") %>
+    	  </div>
+
+    	  <h1 style="margin-top:10px;">Numero de ausencias</h1>
+
+
+            <%@count = @delays.count%>
+            <p style="text-align:center"><%=@count%></p>
+
+
+
+    	  <h3 style="margin-top:10px;">Colegio Los Arcos</h3>
+
+
+
+    </div>

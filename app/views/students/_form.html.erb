@@ -1,0 +1,123 @@
+<div class="container center">
+<%= form_for(student) do |f| %>
+  <% if student.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
+
+      <ul>
+      <% student.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <table style="width:100%">
+    <tr>
+      <td><h1>Datos alumno</h1></td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group label-floating">
+          Foto <i class="material-icons">add_circle</i><br />
+          <%= f.file_field :avatar, class:"form-control" %>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <div class="form-group label-floating">
+          <label class:"control-label", id:"i5" ><strong>Nombre</strong><br></label>
+          <%= f.text_field :nombre, class:"form-control", id:"i5" %>
+        </div>
+      </th>
+      <th colspan="2">
+        <div class="form-group label-floating">
+          <label class:"control-label", id:"i5" ><strong>Apellido</strong><br></label>
+          <%= f.text_field :apellido, class:"form-control", id:"i5" %>
+        </div>
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group label-floating">
+          <label class:"control-label", id:"i5" ><strong>Fecha de nacimiento</strong><br></label>
+          <%= f.text_field :birthdate, class:"form-control", id:"i5" %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= collection_select(:student,:classroom_id,@classroom,:id,:name, {:prompt => 'Elige una Salon'}, {class: "btn btn-raised dropdown-toggle"}) %>
+        </div>
+      </td>
+    </tr>
+        <tr>
+          <td><h1>Datos representante</h1></td>
+        </tr>
+    <tr>
+      <td>
+        <div class="form-group label-floating">
+          <label class:"control-label", id:"i5" ><strong>Representante</strong><br></label>
+          <%= f.text_field :representante1, class:"form-control", id:"i5" %>
+        </div>
+      </td>
+      <td>
+        <div class="form-group label-floating">
+
+          <label class:"control-label", id:"i5" ><strong>Email</strong><br></label>
+          <%= f.text_field :email1, class:"form-control", id:"i5" %>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="form-group label-floating">
+          <label class:"control-label", id:"i5" ><strong>Telefono</strong><br></label>
+          <%= f.text_field :phone1, class:"form-control", id:"i5" %>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+  <%=link_to "#", id: "notification-link", :remote => true do %>
+    <i class="material-icons">add_circle</i>
+  <% end %>
+
+  <div class="container" id="notifications-form">
+    <table>
+        <tr>
+          <td><h1>Datos representante 2</h1></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group label-floating">
+              <label class:"control-label", id:"i5" ><strong>Representante</strong><br></label>
+              <%= f.text_field :representante2, class:"form-control", id:"i5" %>
+            </div>
+          </td>
+          <td>
+            <div class="form-group label-floating">
+              <label class:"control-label", id:"i5" ><strong>Email</strong><br></label>
+              <%= f.text_field :email2, class:"form-control", id:"i5" %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group label-floating">
+              <label class:"control-label", id:"i5" ><strong>Telefono</strong><br></label>
+              <%= f.text_field :phone2, class:"form-control", id:"i5" %>
+            </div>
+          </td>
+        </tr>
+    </table>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class:"btn btn-raised btn-success"%>
+  </div>
+<% end %>
+</div>

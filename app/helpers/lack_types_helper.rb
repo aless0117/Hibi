@@ -1,0 +1,2 @@
+module LackTypesHelper
+end

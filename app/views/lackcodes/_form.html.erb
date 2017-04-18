@@ -1,0 +1,27 @@
+<%= form_for(lackcode) do |f| %>
+  <% if lackcode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lackcode.errors.count, "error") %> prohibited this lackcode from being saved:</h2>
+
+      <ul>
+      <% lackcode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :lack_id %>
+    <%= collection_select(:lackcode,:lack_id,@lacks,:id,:tipodefalta,{:prompt => 'Elige una materia'}, {class: "btn btn-raised dropdown-toggle"}) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

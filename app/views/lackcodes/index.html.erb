@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lackcodes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lacks</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lackcodes.each do |lackcode| %>
+      <tr>
+        <td><%= lackcode.name %></td>
+        <td><%= lackcode.lack.tipodefalta %></td>
+        <td><%= link_to 'Show', lackcode %></td>
+        <td><%= link_to 'Edit', edit_lackcode_path(lackcode) %></td>
+        <td><%= link_to 'Destroy', lackcode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lackcode', new_lackcode_path %>

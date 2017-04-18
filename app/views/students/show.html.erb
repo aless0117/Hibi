@@ -1,0 +1,98 @@
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+
+    <!-- Left Column -->
+    <div class="w3-third">
+
+      <div class="w3-white w3-text-grey w3-card-4">
+
+				<div class="studentprofile student-box ">
+					  <div class="cover">
+					    <%= image_tag("background1.png", :alt => "rss feed") %>
+					  </div>
+					<%= image_tag @student.avatar.url(:medium),:class =>"photo" %>
+					  <h1><%= @student.nombre %> <%= @student.apellido %></h1>
+							<p style="text-align:center"> <%= @student.classroom.name %> </p>
+						<h2><%= @student.birthdate %></h2>
+					  <h3>Caracas, Venezuela</h3>
+					<div class="container" style="padding-left:37%; margin-top:10px;">
+						<% if can? :create, Student %>
+
+								<a data-method="get" href="<%=@student.id%>.pdf"><i class="material-icons">assignment</i></a>
+
+                <%= link_to edit_student_path(@student) do %>
+									<i class="material-icons">create</i>
+								<% end %>
+
+						<% end %>
+					</div>
+				</div>
+
+        <div class="w3-container">
+          <p class="w3-large"><b><i class="fa fa-users fa-fw w3-margin-right w3-text-teal"></i>Representantes</b></p>
+          <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-teal"></i><%=@student.representante1%></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Caracas, Venezuela</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i><%=@student.email1%></p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i><%=@student.phone1%></p>
+          <hr>
+        </div>
+      </div><br>
+    <!-- End Left Column -->
+    </div>
+
+
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+
+
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom inasistencias">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-calendar-times-o fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Inasistencias</h2>
+        <% @absents.each do |p| %>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Hola</b></h5>
+              <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><%= p.created_at.strftime("%A %H:%M")%></h6>
+                <%= p.subjectsto_classroom.subject.name %>
+              <hr>
+          </div>
+        <% end %>
+      </div>
+
+
+
+      <div class="w3-container w3-card-2 w3-white" style="height:auto; padding-bottom:10px;">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-bell fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Notificaciones        <%=link_to "#", id: "notification-link", :remote => true do %>
+                  <i class="material-icons">add_circle</i>
+                <% end %></h2>
+
+					<section class="container" id="notifications-form">
+						<h1 style="margin-left:-5px;">Nueva notificacion</h1>
+							<%= render "notifications/form" %>
+					</section>
+
+					<% @student.notifications.each do |p| %>
+						<div class="w3-container">
+		          <h5 class="w3-opacity"><b><%= p.lackcode.name%></b></h5>
+		          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+  							<div id="ntoficacion">
+  										<li id="notification"><%= p.description%>
+  										<%= p.created_at.strftime("%A %H:%M")%> </li>
+  							</div>
+		          <hr>
+	        	</div>
+					<% end %>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+
+  <!-- End Grid -->
+  </div>
+
+  <!-- End Page Container -->
+</div>

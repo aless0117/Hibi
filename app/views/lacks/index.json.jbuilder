@@ -1,0 +1,1 @@
+json.array! @lacks, partial: 'lacks/lack', as: :lack

@@ -1,0 +1,1 @@
+json.array! @subjectsto_classrooms, partial: 'subjectsto_classrooms/subjectsto_classroom', as: :subjectsto_classroom
