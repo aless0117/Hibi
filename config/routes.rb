@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'home/index'
+
 
   resources :lackcodes
   resources :lacks
@@ -41,9 +41,12 @@ Rails.application.routes.draw do
     resources :report
   end
 
-    root 'welcome#index'
 
+authenticated :user do
+   root 'welcome#index', as: :authenticated_root
+ end
 
+ root "home#index"
 
 
 

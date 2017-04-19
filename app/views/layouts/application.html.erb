@@ -5,12 +5,24 @@
     <%= csrf_meta_tags %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $('#fullpage').fullpage();
+      });
+    </script>
+    <style media="screen">
+      .section{
+        position: relative;
+      }
+    </style>
   </head>
 
 
@@ -29,19 +41,21 @@
       </div>
       <div class="navbar-collapse collapse navbar-inverse-collapse">
         <ul class="nav navbar-nav">
-          <li><%= link_to 'inicio', root_path, method: :get  %></li>
-          <li><%= link_to 'Perfil', "perfil/index", method: :get  %></li>
-          <li><%= link_to 'Salones', "classrooms", method: :get  %></li>
-          <li><%= link_to 'Alumnos', "students", method: :get  %></li>
+          <li><%= link_to 'inicio',root_path	, method: :get  %></li>
+          <li><%= link_to 'Perfil', perfil_index_path	, method: :get  %></li>
+          <li><%= link_to 'Salones', classrooms_path	, method: :get  %></li>
+          <li><%= link_to 'Alumnos', students_path, method: :get  %></li>
 
         <% if can? :create, Student %>
-          <li><%= link_to 'Horarios y clases', "subjectsto_classrooms", method: :get  %></li>
+          <li><%= link_to 'Horarios y clases', subjectsto_classrooms_path, method: :get  %></li>
           <!--<li><%= link_to 'Reportes', "report", method: :get  %></li>-->
+
         <% end %>
 
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to 'Panel de control', "admin", method: :get  %></li>
           <li><%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %></li>
 
         </ul>

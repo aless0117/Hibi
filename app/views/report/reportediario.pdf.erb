@@ -27,7 +27,7 @@
           <td>
         <% @absents.each do |p| %>
             <% if subjectsto_classroom.id == p.subjectsto_classroom.id%>
-                <%= p.student.name %>
+                <%= p.student.nombre %>
               <% end %>
             <% end %>
           </td>

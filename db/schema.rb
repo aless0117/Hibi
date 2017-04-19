@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20170413202416) do
   end
 
   create_table "schedules", force: :cascade do |t|
-    t.date     "start_at"
-    t.date     "end_at"
+    t.time     "start_at"
+    t.time     "end_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
