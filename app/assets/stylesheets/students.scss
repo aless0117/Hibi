@@ -95,13 +95,16 @@
   background-color: white;
   width: 500px;
   height: auto;
+  max-height: 400px;
+  overflow: auto;
 }
 hr {
   width: 250px;
 }
 
 .inasistencias{
-  height: 300px;
+  height: auto;
+  max-height: 300px;
   overflow: auto;
 
 }

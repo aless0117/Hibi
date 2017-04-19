@@ -22,9 +22,10 @@
 
 	    <% @nomina.classroom.students.each do |p| %>
 	      <tr>
-	        <td><%= link_to p.nombre, student_path(p) %></td>
-	        <td><label for="Inasistente" class="checkbox"><%= link_to 'Inasistente', new_subjectsto_classroom_student_absent_path(@nomina.id, p.id) %></label></td>
-					<td><label for="Inasistente" class="checkbox"><%= link_to 'retraso', new_subjectsto_classroom_student_delay_path(@nomina.id, p.id) %></label></td>
+				<td><%= image_tag p.avatar.url(:medium),:class =>"photo2" %></td>
+	        <td><h1><%= p.nombre %> <%= p.apellido %></h1></td>
+	        <td><h1><%= link_to 'Inasistente', new_subjectsto_classroom_student_absent_path(@nomina.id, p.id) %></h1></td>
+					<td><h1><%= link_to 'retraso', new_subjectsto_classroom_student_delay_path(@nomina.id, p.id) %></h1></td>
 	      </tr>
 	    <% end %>
 	  </tbody>
