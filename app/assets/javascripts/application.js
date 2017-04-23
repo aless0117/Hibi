@@ -18,3 +18,7 @@
 //= require chartkick
 
 $.material.init()
+
+$(document).ready(function() {
+    $('#fullpage').fullpage();
+});
