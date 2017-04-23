@@ -13,11 +13,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <script type="text/javascript">
-      $(document).ready(function() {
-          $('#fullpage').fullpage();
-      });
-    </script>
+
     <style media="screen">
       .section{
         position: relative;
@@ -70,6 +66,12 @@
 <%= yield %>
 
 </body>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('#fullpage').fullpage();
+  });
+</script>
 
 
 
