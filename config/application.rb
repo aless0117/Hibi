@@ -10,5 +10,6 @@ Bundler.require(*Rails.groups)
 module Hibi
   class Application < Rails::Application
     config.serve_static_assets = true
+    config.time_zone = 'La Paz'
   end
 end
