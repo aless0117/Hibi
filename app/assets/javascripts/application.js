@@ -20,7 +20,7 @@
 
 $.material.init()
 
-$(document).on("ready page:load", function() {
+$(document).on("turbolinks:load", function() {
   return $('#notification-link').click(function() {
     $('#notifications-form').fadeToggle();
     return $('#notification_description').focus();
