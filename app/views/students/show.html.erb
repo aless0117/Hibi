@@ -55,7 +55,19 @@
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-calendar-times-o fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Inasistencias</h2>
         <% @absents.each do |p| %>
           <div class="w3-container">
-            <h5 class="w3-opacity"><b>Hola</b></h5>
+            <h5 class="w3-opacity"><b>Inasistencia</b></h5>
+              <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><%= p.created_at.strftime("%A %H:%M")%></h6>
+                <%= p.subjectsto_classroom.subject.name %>
+              <hr>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom inasistencias">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-calendar-times-o fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Retrasos</h2>
+        <% @delays.each do |p| %>
+          <div class="w3-container">
+            <h5 class="w3-opacity"><b>Retraso</b></h5>
               <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><%= p.created_at.strftime("%A %H:%M")%></h6>
                 <%= p.subjectsto_classroom.subject.name %>
               <hr>
@@ -66,22 +78,22 @@
 
 
       <div class="w3-container w3-card-2 w3-white" style="height:auto; padding-bottom:10px;">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-bell fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Notificaciones        <%=link_to "#", id: "notification-link", :remote => true do %>
-                  <i class="material-icons">add_circle</i>
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-bell fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Notificaciones <%=link_to "#", id: "notification-link", :remote => true do %>
+
                 <% end %></h2>
 
-					<section class="container" id="notifications-form">
-						<h1 style="margin-left:-5px;">Nueva notificacion</h1>
-							<%= render "notifications/form" %>
-					</section>
+					<div class="">
+          	<%= render "notifications/form" %>
+					</div>
+
 
 					<% @student.notifications.each do |p| %>
 						<div class="w3-container">
-		          <h5 class="w3-opacity"><b><%= p.lackcode.name%></b></h5>
-		          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
+		          <h5 class="w3-opacity"><b><%= p.lackcode.lack.tipodefalta%> - <%= p.lackcode.name%></b></h5>
+		          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i><%= p.created_at.strftime("%A %H:%M")%> - <%= p.user.firstname%> <%= p.user.lastname%></h6>
   							<div id="ntoficacion">
-  										<li id="notification"><%= p.description%>
-  										<%= p.created_at.strftime("%A %H:%M")%> </li>
+  										<li id="ntoficacion"><%= p.description%>
+  										 </li>
   							</div>
 		          <hr>
 	        	</div>

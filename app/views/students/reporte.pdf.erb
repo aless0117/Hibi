@@ -14,6 +14,10 @@
       margin-top: -110px;
       float: right;
     }
+    .hibilogo1{
+
+      float: left;
+    }
     .cabecera{
       border-bottom: 1px solid #BDBDBD
     }
@@ -59,7 +63,10 @@
   </head>
   <body>
 
-
+<div class="container" style="text-align:center;">
+  <%= wicked_pdf_image_tag ('logo1@4x.png') ,:class =>"hibilogo1"  %>
+  <h1>Reporte de estudiante</h1>
+</div>
 
           <%= wicked_pdf_image_tag @student.avatar.url ,:class =>"photo"%>
 
@@ -76,9 +83,9 @@
       <div class="container datos">
         <p><strong>Nombre:</strong> <%= @student.nombre %> <%= @student.apellido %></p>
         <p><strong>Salon:</strong> <%= @student.classroom.name %></p>
-        <p><strong>Representante:</strong> <%=@student.representante1%> </p>
-        <p><strong>Nro. del representante:</strong> <%=@student.phone1%></p>
-        <p><strong>Email:</strong> <%=@student.email1%></p>
+        <p><strong>Representante:</strong> <%=@student.representante1%> - <%=@student.representante2%> </p>
+        <p><strong>Nro. del representante:</strong> <%=@student.phone1%> - <%=@student.phone2%> </p>
+        <p><strong>Email:</strong> <%=@student.email1%> - <%=@student.email2%></p>
       </div>
 
       <div class="container cabecera">
@@ -90,19 +97,28 @@
       </div>
 
       <div class="container cabecera">
+        <h1>Retrasos</h1>
+      </div>
+      <div class="container ausencias">
+        <%@count = @delays.count%>
+        <p><strong>Nro. de Retrasos:</strong> <%=@count%></p>
+      </div>
+
+      <div class="container cabecera">
         <h1>Notificaciones</h1>
       </div>
       <div class="container notificaciones">
         <% @student.notifications.each do |p| %>
-          <h5><b><%= p.lackcode.name%></b></h5>
+          <h5><b><%= p.lackcode.name%> - <%= p.created_at.strftime("%A %H:%M")%></b></h5>
+          <h6><b><%= p.user.firstname%> <%= p.user.lastname%></b></h6>
               <%= p.description%><br>
-              <%= p.created_at.strftime("%A %H:%M")%>
+
             <hr>
         <% end %>
       </div>
 
 
-      <%= wicked_pdf_image_tag ('logo1@4x.png') ,:class =>"hibilogo"  %>
+
 
 
 

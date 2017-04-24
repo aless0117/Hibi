@@ -17,11 +17,11 @@ class StudentsController < ApplicationController
   def show
       @notification = Notification.new
       @absents = @student.absents
+      @delays = @student.delays
       respond_to do |format|
         format.html
         format.json
         format.pdf{render template:'students/reporte', pdf:'reporte'}
-
   end
 end
 

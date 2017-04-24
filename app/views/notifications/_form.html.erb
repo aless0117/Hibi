@@ -1,4 +1,4 @@
-<%= form_for([@student,@notification], remote: true, html: { id: "comments-form",format: :json, :"data-type"=>"json" }) do |f| %>
+<%= form_for([@student,@notification], ) do |f| %>
     <div class="field ">
       Falta <br>
       <%= collection_select(:notification,:lackcode_id, Lackcode.all ,:id,:name,{:prompt => 'Tipo de falta'}, {class: "btn btn-raised dropdown-toggle"}) %>
