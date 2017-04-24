@@ -1,65 +1,72 @@
-<div class="container login1">
-<h2>Registrate</h2>
-  <table>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
-      <%= devise_error_messages! %>
-      <tr>
-        <th>
-          <div class="form-group label-floating">
-            <%= f.label :Nombre %><br />
-            <%= f.text_field :firstname, autofocus: true, class:"form-control" %>
-          </div>
-        </th>
-        <td>
-          <div class="form-group label-floating">
-            <%= f.label :email %><br />
-            <%= f.email_field :email, autofocus: true, class:"form-control" %>
-          </div>
-        </td>
-        <td>
-          <div class="form-group label-floating">
-            <%= f.label :admin %><br />
-            <%= f.text_field :admin %>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="form-group label-floating">
-            <%= f.label :apellido %><br />
-            <%= f.text_field :lastname, autofocus: true, class:"form-control" %>
-          </div>
-        </td>
+<%= image_tag("logo1@4x.png", :alt => "rss feed", :class =>"logologin") %>
 
-        <td>
-          <div class="form-group label-floating">
-            <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <% end %><br />
-            <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
-          </div>
-        </td>
-      </tr>
+<div class="container">
+<div class=" login">
+  <h2>Registrate</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { multipart: true }) do |f| %>
+        <%= devise_error_messages! %>
+        <tr>
+          <th>
+            <div class="form-group label-floating">
+              <%= f.label :Nombre %><br />
+              <%= f.text_field :firstname, autofocus: true, class:"form-control" %>
+            </div>
+          </th>
+          <td>
+            <div class="form-group label-floating">
+              <%= f.label :apellido %><br />
+              <%= f.text_field :lastname, autofocus: true, class:"form-control" %>
+            </div>
+          </td>
+          <td>
+            <div class="form-group label-floating">
+              <%= f.label :Fecha_de_nacimiento %><br />
+              <%= f.date_field :birthdate, autofocus: true, class:"form-control" %>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="form-group label-floating">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, class:"form-control" %>
+            </div>
 
-      <tr>
-        <td>
-          <div class="form-group label-floating">
-            <%= f.label :Fecha_de_nacimiento %><br />
-            <%= f.date_field :birthdate, autofocus: true, class:"form-control" %>
-          </div>
-        </td>
-        <td>
-          <div class="form-group label-floating">
-            <%= f.label :password_confirmation%> <br />
-            <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
-          </div>
-        </td>
-      </tr>
+          </td>
+
+          <td>
+            <div class="form-group label-floating">
+              <%= f.label :admin %><br />
+              <%= f.text_field :admin, class:"form-control"%>
+            </div>
+
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class="form-group label-floating">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", class:"form-control" %>
+            </div>
+
+          </td>
+          <td>
+            <div class="form-group label-floating">
+              <%= f.label :password_confirmation%> <br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control" %>
+            </div>
+          </td>
+        </tr>
 
 
 
-  <%= render "devise/shared/links" %>
-  </table>
-  <%= f.submit class:"btn btn-raised btn-success" %>
-  <% end %>
+    <%= render "devise/shared/links" %>
+
+    <%= f.submit class:"btn btn-raised btn-success" %>
+    <% end %>
+</div>
+
 </div>

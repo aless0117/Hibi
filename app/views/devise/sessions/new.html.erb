@@ -1,8 +1,6 @@
-
+<%= image_tag("logo1@4x.png", :alt => "rss feed", :class =>"logologin") %>
 <div class="container">
- <div class="row">
-    <div class="col-md-6 contenedor">   </div>
-      <div class="col-md-6 login">
+      <div class="login">
         <h2>Log in</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="form-group label-floating">
@@ -27,4 +25,3 @@
         <%= render "devise/shared/links" %>
       </div>
  </div>
-</div>
