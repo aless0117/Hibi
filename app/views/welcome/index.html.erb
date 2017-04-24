@@ -13,23 +13,35 @@
 							<h3 style="color:white;">Primero A</h3>
 								<p style="color:white;">Horario Los Arcos</p>
 						</div>
-								<% @todaslashoras.each do |p| %>
-									<% if Time.now.strftime("%A")	== p.day.dia%>
-										<% if p.classroom.name	== "Primero A"%>
 									<div class="container center-box">
+										<table class="table table-striped table-hover ">
+										  <thead>
+										    <tr>
+										      <th>Materia</th>
+										      <th>Profesor</th>
+										      <th>Horario</th>
 
-											<div class="row">
-														<div class="col-md-6">
-															<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-														</div>
-														<div class="col-md-6">
-														<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-														</div>
-												</div>
+										    </tr>
+										  </thead>
+
+										  <tbody>
+												<% @todaslashoras.each do |p| %>
+													<% if Time.now.strftime("%A")	== p.day.dia%>
+														<% if p.classroom.name	== "Primero A"%>
+										      <tr>
+										        <td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+										        <td><%=p.user.firstname%></td>
+										        <td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+										      </tr>
+													<%end%>
+												<%end%>
+											<% end %>
+										  </tbody>
+										</table>
+
 									</div>
-										<%end%>
-									<%end%>
-								<% end %>
+
 						</div>
 					</div>
 				</div>
@@ -40,23 +52,34 @@
 								<h3 style="color:white;">Primero B</h3>
 									<p style="color:white;">Horario Los Arcos</p>
 							</div>
-									<% @todaslashoras.each do |p| %>
-										<% if Time.now.strftime("%A")	== p.day.dia%>
-											<% if p.classroom.name	== "Primero B"%>
-										<div class="container center-box">
+							<div class="container center-box">
+								<table class="table table-striped table-hover ">
+									<thead>
+										<tr>
+											<th>Materia</th>
+											<th>Profesor</th>
+											<th>Horario</th>
 
-												<div class="row">
-															<div class="col-md-6">
-																<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-															</div>
-															<div class="col-md-6">
-															<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-															</div>
-													</div>
-										</div>
+										</tr>
+									</thead>
+
+									<tbody>
+										<% @todaslashoras.each do |p| %>
+											<% if Time.now.strftime("%A")	== p.day.dia%>
+												<% if p.classroom.name	== "Primero B"%>
+											<tr>
+												<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+												<td><%=p.user.firstname%></td>
+												<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+											</tr>
 											<%end%>
 										<%end%>
 									<% end %>
+									</tbody>
+								</table>
+
+							</div>
 							</div>
 						</div>
 					</div>
@@ -67,23 +90,34 @@
 									<h3 style="color:white;">Primero C</h3>
 										<p style="color:white;">Horario Los Arcos</p>
 								</div>
-										<% @todaslashoras.each do |p| %>
-											<% if Time.now.strftime("%A")	== p.day.dia%>
-												<% if p.classroom.name	== "Primero C"%>
-											<div class="container center-box">
+								<div class="container center-box">
+									<table class="table table-striped table-hover ">
+										<thead>
+											<tr>
+												<th>Materia</th>
+												<th>Profesor</th>
+												<th>Horario</th>
 
-													<div class="row">
-																<div class="col-md-6">
-																	<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																</div>
-																<div class="col-md-6">
-																<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																</div>
-														</div>
-											</div>
+											</tr>
+										</thead>
+
+										<tbody>
+											<% @todaslashoras.each do |p| %>
+												<% if Time.now.strftime("%A")	== p.day.dia%>
+													<% if p.classroom.name	== "Primero C"%>
+												<tr>
+													<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+													<td><%=p.user.firstname%></td>
+													<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+												</tr>
 												<%end%>
 											<%end%>
 										<% end %>
+										</tbody>
+									</table>
+
+								</div>
 								</div>
 							</div>
 						</div>
@@ -94,23 +128,34 @@
 										<h3 style="color:white;">Primero D</h3>
 											<p style="color:white;">Horario Los Arcos</p>
 									</div>
-											<% @todaslashoras.each do |p| %>
-												<% if Time.now.strftime("%A")	== p.day.dia%>
-													<% if p.classroom.name	== "Primero D"%>
-												<div class="container center-box">
+									<div class="container center-box">
+										<table class="table table-striped table-hover ">
+											<thead>
+												<tr>
+													<th>Materia</th>
+													<th>Profesor</th>
+													<th>Horario</th>
 
-														<div class="row">
-																	<div class="col-md-6">
-																		<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																	</div>
-																	<div class="col-md-6">
-																	<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																	</div>
-															</div>
-												</div>
+												</tr>
+											</thead>
+
+											<tbody>
+												<% @todaslashoras.each do |p| %>
+													<% if Time.now.strftime("%A")	== p.day.dia%>
+														<% if p.classroom.name	== "Primero D"%>
+													<tr>
+														<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+														<td><%=p.user.firstname%></td>
+														<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+													</tr>
 													<%end%>
 												<%end%>
 											<% end %>
+											</tbody>
+										</table>
+
+									</div>
 									</div>
 								</div>
 							</div>
@@ -126,23 +171,34 @@
 							<h3 style="color:white;">Segundo A</h3>
 								<p style="color:white;">Horario Los Arcos</p>
 						</div>
-								<% @todaslashoras.each do |p| %>
-									<% if Time.now.strftime("%A")	== p.day.dia%>
-										<% if p.classroom.name	== "Segundo A"%>
-									<div class="container center-box">
+						<div class="container center-box">
+							<table class="table table-striped table-hover ">
+								<thead>
+									<tr>
+										<th>Materia</th>
+										<th>Profesor</th>
+										<th>Horario</th>
 
-											<div class="row">
-														<div class="col-md-6">
-															<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-														</div>
-														<div class="col-md-6">
-														<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-														</div>
-												</div>
-									</div>
+									</tr>
+								</thead>
+
+								<tbody>
+									<% @todaslashoras.each do |p| %>
+										<% if Time.now.strftime("%A")	== p.day.dia%>
+											<% if p.classroom.name	== "Segundo A"%>
+										<tr>
+											<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+											<td><%=p.user.firstname%></td>
+											<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+										</tr>
 										<%end%>
 									<%end%>
 								<% end %>
+								</tbody>
+							</table>
+
+						</div>
 						</div>
 					</div>
 				</div>
@@ -153,23 +209,34 @@
 								<h3 style="color:white;">Segundo B</h3>
 									<p style="color:white;">Horario Los Arcos</p>
 							</div>
-									<% @todaslashoras.each do |p| %>
-										<% if Time.now.strftime("%A")	== p.day.dia%>
-											<% if p.classroom.name	== "Segundo B"%>
-										<div class="container center-box">
+							<div class="container center-box">
+								<table class="table table-striped table-hover ">
+									<thead>
+										<tr>
+											<th>Materia</th>
+											<th>Profesor</th>
+											<th>Horario</th>
 
-												<div class="row">
-															<div class="col-md-6">
-																<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-															</div>
-															<div class="col-md-6">
-															<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-															</div>
-													</div>
-										</div>
+										</tr>
+									</thead>
+
+									<tbody>
+										<% @todaslashoras.each do |p| %>
+											<% if Time.now.strftime("%A")	== p.day.dia%>
+												<% if p.classroom.name	== "Segundo B"%>
+											<tr>
+												<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+												<td><%=p.user.firstname%></td>
+												<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+											</tr>
 											<%end%>
 										<%end%>
 									<% end %>
+									</tbody>
+								</table>
+
+							</div>
 							</div>
 						</div>
 					</div>
@@ -180,23 +247,34 @@
 									<h3 style="color:white;">Segundo C</h3>
 										<p style="color:white;">Horario Los Arcos</p>
 								</div>
-										<% @todaslashoras.each do |p| %>
-											<% if Time.now.strftime("%A")	== p.day.dia%>
-												<% if p.classroom.name	== "Segundo C"%>
-											<div class="container center-box">
+								<div class="container center-box">
+									<table class="table table-striped table-hover ">
+										<thead>
+											<tr>
+												<th>Materia</th>
+												<th>Profesor</th>
+												<th>Horario</th>
 
-													<div class="row">
-																<div class="col-md-6">
-																	<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																</div>
-																<div class="col-md-6">
-																<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																</div>
-														</div>
-											</div>
+											</tr>
+										</thead>
+
+										<tbody>
+											<% @todaslashoras.each do |p| %>
+												<% if Time.now.strftime("%A")	== p.day.dia%>
+													<% if p.classroom.name	== "Segundo C"%>
+												<tr>
+													<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+													<td><%=p.user.firstname%></td>
+													<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+												</tr>
 												<%end%>
 											<%end%>
 										<% end %>
+										</tbody>
+									</table>
+
+								</div>
 								</div>
 							</div>
 						</div>
@@ -207,23 +285,34 @@
 										<h3 style="color:white;">Segundo D</h3>
 											<p style="color:white;">Horario Los Arcos</p>
 									</div>
-											<% @todaslashoras.each do |p| %>
-												<% if Time.now.strftime("%A")	== p.day.dia%>
-													<% if p.classroom.name	== "Segundo D"%>
-												<div class="container center-box">
+									<div class="container center-box">
+										<table class="table table-striped table-hover ">
+											<thead>
+												<tr>
+													<th>Materia</th>
+													<th>Profesor</th>
+													<th>Horario</th>
 
-														<div class="row">
-																	<div class="col-md-6">
-																		<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																	</div>
-																	<div class="col-md-6">
-																	<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																	</div>
-															</div>
-												</div>
+												</tr>
+											</thead>
+
+											<tbody>
+												<% @todaslashoras.each do |p| %>
+													<% if Time.now.strftime("%A")	== p.day.dia%>
+														<% if p.classroom.name	== "Segundo D"%>
+													<tr>
+														<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+														<td><%=p.user.firstname%></td>
+														<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+													</tr>
 													<%end%>
 												<%end%>
 											<% end %>
+											</tbody>
+										</table>
+
+									</div>
 									</div>
 								</div>
 							</div>
@@ -239,23 +328,34 @@
 							<h3 style="color:white;">Tercero A</h3>
 								<p style="color:white;">Horario Los Arcos</p>
 						</div>
-								<% @todaslashoras.each do |p| %>
-									<% if Time.now.strftime("%A")	== p.day.dia%>
-										<% if p.classroom.name	== "Tercero A"%>
-									<div class="container center-box">
+						<div class="container center-box">
+							<table class="table table-striped table-hover ">
+								<thead>
+									<tr>
+										<th>Materia</th>
+										<th>Profesor</th>
+										<th>Horario</th>
 
-											<div class="row">
-														<div class="col-md-6">
-															<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-														</div>
-														<div class="col-md-6">
-														<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-														</div>
-												</div>
-									</div>
+									</tr>
+								</thead>
+
+								<tbody>
+									<% @todaslashoras.each do |p| %>
+										<% if Time.now.strftime("%A")	== p.day.dia%>
+											<% if p.classroom.name	== "Tercero A"%>
+										<tr>
+											<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+											<td><%=p.user.firstname%></td>
+											<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+										</tr>
 										<%end%>
 									<%end%>
 								<% end %>
+								</tbody>
+							</table>
+
+						</div>
 						</div>
 					</div>
 				</div>
@@ -266,23 +366,34 @@
 								<h3 style="color:white;">Tercero B</h3>
 									<p style="color:white;">Horario Los Arcos</p>
 							</div>
-									<% @todaslashoras.each do |p| %>
-										<% if Time.now.strftime("%A")	== p.day.dia%>
-											<% if p.classroom.name	== "Tercero B"%>
-										<div class="container center-box">
+							<div class="container center-box">
+								<table class="table table-striped table-hover ">
+									<thead>
+										<tr>
+											<th>Materia</th>
+											<th>Profesor</th>
+											<th>Horario</th>
 
-												<div class="row">
-															<div class="col-md-6">
-																<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-															</div>
-															<div class="col-md-6">
-															<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-															</div>
-													</div>
-										</div>
+										</tr>
+									</thead>
+
+									<tbody>
+										<% @todaslashoras.each do |p| %>
+											<% if Time.now.strftime("%A")	== p.day.dia%>
+												<% if p.classroom.name	== "Tercero B"%>
+											<tr>
+												<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+												<td><%=p.user.firstname%></td>
+												<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+											</tr>
 											<%end%>
 										<%end%>
 									<% end %>
+									</tbody>
+								</table>
+
+							</div>
 							</div>
 						</div>
 					</div>
@@ -293,23 +404,34 @@
 									<h3 style="color:white;">Tercero C</h3>
 										<p style="color:white;">Horario Los Arcos</p>
 								</div>
-										<% @todaslashoras.each do |p| %>
-											<% if Time.now.strftime("%A")	== p.day.dia%>
-												<% if p.classroom.name	== "Tercero C"%>
-											<div class="container center-box">
+								<div class="container center-box">
+									<table class="table table-striped table-hover ">
+										<thead>
+											<tr>
+												<th>Materia</th>
+												<th>Profesor</th>
+												<th>Horario</th>
 
-													<div class="row">
-																<div class="col-md-6">
-																	<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																</div>
-																<div class="col-md-6">
-																<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																</div>
-														</div>
-											</div>
+											</tr>
+										</thead>
+
+										<tbody>
+											<% @todaslashoras.each do |p| %>
+												<% if Time.now.strftime("%A")	== p.day.dia%>
+													<% if p.classroom.name	== "Tercero C"%>
+												<tr>
+													<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+													<td><%=p.user.firstname%></td>
+													<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+												</tr>
 												<%end%>
 											<%end%>
 										<% end %>
+										</tbody>
+									</table>
+
+								</div>
 								</div>
 							</div>
 						</div>
@@ -320,23 +442,34 @@
 										<h3 style="color:white;">Tercero D</h3>
 											<p style="color:white;">Horario Los Arcos</p>
 									</div>
-											<% @todaslashoras.each do |p| %>
-												<% if Time.now.strftime("%A")	== p.day.dia%>
-													<% if p.classroom.name	== "Tercero D"%>
-												<div class="container center-box">
+									<div class="container center-box">
+										<table class="table table-striped table-hover ">
+											<thead>
+												<tr>
+													<th>Materia</th>
+													<th>Profesor</th>
+													<th>Horario</th>
 
-														<div class="row">
-																	<div class="col-md-6">
-																		<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																	</div>
-																	<div class="col-md-6">
-																	<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																	</div>
-															</div>
-												</div>
+												</tr>
+											</thead>
+
+											<tbody>
+												<% @todaslashoras.each do |p| %>
+													<% if Time.now.strftime("%A")	== p.day.dia%>
+														<% if p.classroom.name	== "Tercero D"%>
+													<tr>
+														<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+														<td><%=p.user.firstname%></td>
+														<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+													</tr>
 													<%end%>
 												<%end%>
 											<% end %>
+											</tbody>
+										</table>
+
+									</div>
 									</div>
 								</div>
 							</div>
@@ -352,23 +485,34 @@
 							<h3 style="color:white;">Cuarto A</h3>
 								<p style="color:white;">Horario Los Arcos</p>
 						</div>
-								<% @todaslashoras.each do |p| %>
-									<% if Time.now.strftime("%A")	== p.day.dia%>
-										<% if p.classroom.name	== "Cuarto A"%>
-									<div class="container center-box">
+						<div class="container center-box">
+							<table class="table table-striped table-hover ">
+								<thead>
+									<tr>
+										<th>Materia</th>
+										<th>Profesor</th>
+										<th>Horario</th>
 
-											<div class="row">
-														<div class="col-md-6">
-															<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-														</div>
-														<div class="col-md-6">
-														<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-														</div>
-												</div>
-									</div>
+									</tr>
+								</thead>
+
+								<tbody>
+									<% @todaslashoras.each do |p| %>
+										<% if Time.now.strftime("%A")	== p.day.dia%>
+											<% if p.classroom.name	== "Cuarto A"%>
+										<tr>
+											<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+											<td><%=p.user.firstname%></td>
+											<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+										</tr>
 										<%end%>
 									<%end%>
 								<% end %>
+								</tbody>
+							</table>
+
+						</div>
 						</div>
 					</div>
 				</div>
@@ -379,23 +523,34 @@
 								<h3 style="color:white;">Cuarto B</h3>
 									<p style="color:white;">Horario Los Arcos</p>
 							</div>
-									<% @todaslashoras.each do |p| %>
-										<% if Time.now.strftime("%A")	== p.day.dia%>
-											<% if p.classroom.name	== "Cuarto B"%>
-										<div class="container center-box">
+							<div class="container center-box">
+								<table class="table table-striped table-hover ">
+									<thead>
+										<tr>
+											<th>Materia</th>
+											<th>Profesor</th>
+											<th>Horario</th>
 
-												<div class="row">
-															<div class="col-md-6">
-																<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-															</div>
-															<div class="col-md-6">
-															<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-															</div>
-													</div>
-										</div>
+										</tr>
+									</thead>
+
+									<tbody>
+										<% @todaslashoras.each do |p| %>
+											<% if Time.now.strftime("%A")	== p.day.dia%>
+												<% if p.classroom.name	== "Cuarto B"%>
+											<tr>
+												<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+												<td><%=p.user.firstname%></td>
+												<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+											</tr>
 											<%end%>
 										<%end%>
 									<% end %>
+									</tbody>
+								</table>
+
+							</div>
 							</div>
 						</div>
 					</div>
@@ -406,23 +561,34 @@
 									<h3 style="color:white;">Cuarto C</h3>
 										<p style="color:white;">Horario Los Arcos</p>
 								</div>
-										<% @todaslashoras.each do |p| %>
-											<% if Time.now.strftime("%A")	== p.day.dia%>
-												<% if p.classroom.name	== "Cuarto C"%>
-											<div class="container center-box">
+								<div class="container center-box">
+									<table class="table table-striped table-hover ">
+										<thead>
+											<tr>
+												<th>Materia</th>
+												<th>Profesor</th>
+												<th>Horario</th>
 
-													<div class="row">
-																<div class="col-md-6">
-																	<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																</div>
-																<div class="col-md-6">
-																<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																</div>
-														</div>
-											</div>
+											</tr>
+										</thead>
+
+										<tbody>
+											<% @todaslashoras.each do |p| %>
+												<% if Time.now.strftime("%A")	== p.day.dia%>
+													<% if p.classroom.name	== "Cuarto C"%>
+												<tr>
+													<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+													<td><%=p.user.firstname%></td>
+													<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+												</tr>
 												<%end%>
 											<%end%>
 										<% end %>
+										</tbody>
+									</table>
+
+								</div>
 								</div>
 							</div>
 						</div>
@@ -433,23 +599,34 @@
 										<h3 style="color:white;">Cuarto D</h3>
 											<p style="color:white;">Horario Los Arcos</p>
 									</div>
-											<% @todaslashoras.each do |p| %>
-												<% if Time.now.strftime("%A")	== p.day.dia%>
-													<% if p.classroom.name	== "Cuarto D"%>
-												<div class="container center-box">
+									<div class="container center-box">
+										<table class="table table-striped table-hover ">
+											<thead>
+												<tr>
+													<th>Materia</th>
+													<th>Profesor</th>
+													<th>Horario</th>
 
-														<div class="row">
-																	<div class="col-md-6">
-																		<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-																	</div>
-																	<div class="col-md-6">
-																	<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-																	</div>
-															</div>
-												</div>
+												</tr>
+											</thead>
+
+											<tbody>
+												<% @todaslashoras.each do |p| %>
+													<% if Time.now.strftime("%A")	== p.day.dia%>
+														<% if p.classroom.name	== "Cuarto D"%>
+													<tr>
+														<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+														<td><%=p.user.firstname%></td>
+														<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+													</tr>
 													<%end%>
 												<%end%>
 											<% end %>
+											</tbody>
+										</table>
+
+									</div>
 									</div>
 								</div>
 							</div>
@@ -465,23 +642,34 @@
 			<h3 style="color:white;">Quinto A</h3>
 				<p style="color:white;">Horario Los Arcos</p>
 		</div>
-				<% @todaslashoras.each do |p| %>
-					<% if Time.now.strftime("%A")	== p.day.dia%>
-						<% if p.classroom.name	== "Quinto A"%>
-					<div class="container center-box">
+		<div class="container center-box">
+			<table class="table table-striped table-hover ">
+				<thead>
+					<tr>
+						<th>Materia</th>
+						<th>Profesor</th>
+						<th>Horario</th>
 
-							<div class="row">
-										<div class="col-md-6">
-											<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-										</div>
-										<div class="col-md-6">
-										<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-										</div>
-								</div>
-					</div>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% @todaslashoras.each do |p| %>
+						<% if Time.now.strftime("%A")	== p.day.dia%>
+							<% if p.classroom.name	== "Quinto A"%>
+						<tr>
+							<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+							<td><%=p.user.firstname%></td>
+							<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+						</tr>
 						<%end%>
 					<%end%>
 				<% end %>
+				</tbody>
+			</table>
+
+		</div>
 		</div>
 	</div>
 </div>
@@ -492,23 +680,34 @@
 				<h3 style="color:white;">Quinto B</h3>
 					<p style="color:white;">Horario Los Arcos</p>
 			</div>
-					<% @todaslashoras.each do |p| %>
-						<% if Time.now.strftime("%A")	== p.day.dia%>
-							<% if p.classroom.name	== "Quinto B"%>
-						<div class="container center-box">
+			<div class="container center-box">
+				<table class="table table-striped table-hover ">
+					<thead>
+						<tr>
+							<th>Materia</th>
+							<th>Profesor</th>
+							<th>Horario</th>
 
-								<div class="row">
-											<div class="col-md-6">
-												<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-											</div>
-											<div class="col-md-6">
-											<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-											</div>
-									</div>
-						</div>
+						</tr>
+					</thead>
+
+					<tbody>
+						<% @todaslashoras.each do |p| %>
+							<% if Time.now.strftime("%A")	== p.day.dia%>
+								<% if p.classroom.name	== "Quinto B"%>
+							<tr>
+								<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+								<td><%=p.user.firstname%></td>
+								<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+							</tr>
 							<%end%>
 						<%end%>
 					<% end %>
+					</tbody>
+				</table>
+
+			</div>
 			</div>
 		</div>
 	</div>
@@ -519,23 +718,34 @@
 					<h3 style="color:white;">Quinto C</h3>
 						<p style="color:white;">Horario Los Arcos</p>
 				</div>
-						<% @todaslashoras.each do |p| %>
-							<% if Time.now.strftime("%A")	== p.day.dia%>
-								<% if p.classroom.name	== "Quinto C"%>
-							<div class="container center-box">
+				<div class="container center-box">
+					<table class="table table-striped table-hover ">
+						<thead>
+							<tr>
+								<th>Materia</th>
+								<th>Profesor</th>
+								<th>Horario</th>
 
-									<div class="row">
-												<div class="col-md-6">
-													<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-												</div>
-												<div class="col-md-6">
-												<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-												</div>
-										</div>
-							</div>
+							</tr>
+						</thead>
+
+						<tbody>
+							<% @todaslashoras.each do |p| %>
+								<% if Time.now.strftime("%A")	== p.day.dia%>
+									<% if p.classroom.name	== "Quinto C"%>
+								<tr>
+									<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+									<td><%=p.user.firstname%></td>
+									<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+								</tr>
 								<%end%>
 							<%end%>
 						<% end %>
+						</tbody>
+					</table>
+
+				</div>
 				</div>
 			</div>
 		</div>
@@ -546,23 +756,33 @@
 						<h3 style="color:white;">Quinto D</h3>
 							<p style="color:white;">Horario Los Arcos</p>
 					</div>
-							<% @todaslashoras.each do |p| %>
-								<% if Time.now.strftime("%A")	== p.day.dia%>
-									<% if p.classroom.name	== "Quinto D"%>
-								<div class="container center-box">
+					<div class="container center-box">
+						<table class="table table-striped table-hover ">
+							<thead>
+								<tr>
+									<th>Materia</th>
+									<th>Profesor</th>
+									<th>Horario</th>
+								</tr>
+							</thead>
 
-										<div class="row">
-													<div class="col-md-6">
-														<h3><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></h3>
-													</div>
-													<div class="col-md-6">
-													<h3><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></h3>
-													</div>
-											</div>
-								</div>
+							<tbody>
+								<% @todaslashoras.each do |p| %>
+									<% if Time.now.strftime("%A")	== p.day.dia%>
+										<% if p.classroom.name	== "Quinto D"%>
+									<tr>
+										<td><a data-method="get" href="subjectsto_classrooms/<%=p.id%>/nomina/<%=p.classroom.id%>"><%=p.subject.name%></a></td>
+										<td><%=p.user.firstname%></td>
+										<td><%=p.schedule.start_at.strftime("%H:%M")%>-<%=p.schedule.end_at.strftime("%H:%M")%></td>
+
+									</tr>
 									<%end%>
 								<%end%>
 							<% end %>
+							</tbody>
+						</table>
+
+					</div>
 					</div>
 				</div>
 			</div>
