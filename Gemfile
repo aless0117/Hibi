@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.5'
   gem "chartkick"
   gem 'rails_admin', '~> 1.1.1'
   gem 'aws-sdk'
-
+  gem 'jquery-turbolinks'
 
 
 group :development, :test do
