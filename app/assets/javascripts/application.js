@@ -19,3 +19,20 @@
 
 
 $.material.init()
+
+$(document).on("ready page:load", function() {
+  return $('#notification-link').click(function() {
+    $('#notifications-form').fadeToggle();
+    return $('#notification_description').focus();
+  });
+});
+
+$(document).on("ajax:success", "form#comments-form", function(ev, data) {
+  console.log(data);
+  $(this).find('textarea').val("");
+  return $("#ntoficacion").append("<li> " + data.description + "</li>");
+});
+
+$(document).on("ajax:error", "form#comments-form", function(ev, data) {
+  return console.log(data);
+});
