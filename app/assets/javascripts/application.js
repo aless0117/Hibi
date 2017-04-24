@@ -14,10 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-
-$.material.init()
-
-$(document).ready(function() {
-		$('#fullpage').fullpage();
-});
