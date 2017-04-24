@@ -1,4 +1,4 @@
-$(document).on "turbolinks:load", ->
+$(document).on "page:load", ->
   $('#notification-link').click ->
     $('#notifications-form').fadeToggle()
     $('#notification_description').focus()
